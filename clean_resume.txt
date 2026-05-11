@@ -1,0 +1,69 @@
+
+[YOUR NAME]
+[YOUR LOCATION] | [YOUR PHONE] | [YOUR EMAIL] | [YOUR LINKEDIN]
+
+A motivated IT professional with expertise in system management, network administration, and technical support. Skilled in optimizing IT infrastructure, integrating CRM systems, and enhancing user experiences through website development. Proficient in deploying innovative solutions, streamlining operations, and training teams on software and hardware. Committed to driving efficiency and delivering impactful IT solutions for business growth.
+
+Work Experiences
+
+IT Analyst - MK Wholesale Centre Ltd.					         	          March 2024 – Nov 2024
+•	Created and managed a catalogue of 4,000 products across two different websites, overseeing data management, product updates, stock levels, discontinued products, accurate record maintenance, and the integration of high-quality images.
+•	Implemented changes and enhancements on WordPress and Magento platforms, resolved hosting issues, and performed regular UI/UX updates to improve user experience.
+•	Integrated CRM systems customized them to meet company requirements, and trained staff on effective software usage.
+•	Utilized Google Analytics 4 and Looker to provide insights into e-commerce performance, warehouse operations, and sales trends.
+•	Implemented an integrated warehouse system to ensure seamless inflow and outflow of products.
+
+IT Team Lead - Vibgyor Vision                                                                                          July 2020 – Dec 2023
+
+•	Designed and constructed the official company website, incorporating analytics tools to monitor and analyze web traffic effectively
+•	Implemented the deployment of the ZKT950 attendance capturing device with an in-office Windows server, to company policies on its software, and ensured continuous monitoring of attendance and payroll.
+•	Managed the procurement, maintenance, and upgrading of hardware and software for the company, involving training of the company staff on the software.
+•	Wrote spreadsheet macros and formulas to streamline and optimize operational processes across various departments.
+•	Researched and implemented AI tools with the aim of streamlining and enhancing the efficiency of Sales and Accounts processes.
+•	Conducted training sessions for new employees on digital literacy and company software ethics.
+
+IT Support - Vibgyor Vision                                                                                               Oct 2019 - July 2020.
+
+•	From deploying network infrastructure to installing operating systems and company toolkits on individual computers.
+•	Implemented a local shared network on Microsoft Windows to facilitate seamless internal data sharing. Additionally, executed weekly backup protocols to mitigate the risk of data loss.
+•	Facilitating the configuration of company email clients for employees and addressing and resolving email server issues.
+•	Produced engaging visual content in both static and video formats to captivate the audience and foster the development of the brand image.
+
+Technical Support Engineer - CubeXS Weatherly (Pvt) Ltd.                                          July 2019- Sep 2019
+•	Provide technical support to customers via phone, email, and chat.
+•	Diagnose and troubleshoot software, hardware, and network issues.
+•	Collaborate with cross-functional teams to identify and resolve customer issues.
+•	Ensure timely resolution of customer issues and maintain accurate records of support requests and resolutions. 
+Academic Qualification
+
+Masters in Data Science and Analytics, [YOUR UNIVERSITY]                                            
+Bachelors in Computer Science, DHA Suffa University                                                               
+
+Projects
+
+Assan-tendance - Attendance management system, which uses Wi-Fi connectivity through the employee’s smartphone to mark attendance, and create payroll based on hourly and monthly rates, allowing users to mark attendance when in the vicinity and use the Android app (made with Dart/Flutter, with the cloud of Firebase and Raspberry Pi to broadcast signals) to manage their attendance. 
+Intrusion Detection Using Snort – Researched prevention mechanisms of intrusions using snort and other methodologies in a network and methods to make the vulnerabilities secure.
+
+Food Ordering System - Developed a software project using the C programming language with a terminal interface. The primary objective was to automate the ordering process. The system facilitated order placement, payment processing, and an extensive menu.
+
+Technical Skills
+
+Languages		Python, C, C++, C#, HTML/CSS, Bash.
+Tools	Linux, Visual Studio, PyCharm, Microsoft Office, GSuite Google Analytics 4, Looker.
+
+Soft Skills
+
+●     Leadership, Problem-Solving, Teamwork, Communication.
+
+
+External Courses
+
+●	Certified Ethical Hackingv8 - GitHub
+●	Intro to Bash Programming – Code Academy
+●	Fundamentals of Digital Marketing – Google Digital Garage
+
+
+Volunteer & Achievements
+
+●     Team Leader in AIESEC - Helped Students to enable exchange programs all over the world.
+●     Pakistan Youth Forum - Providing helping hands to orphanages and old age homes.

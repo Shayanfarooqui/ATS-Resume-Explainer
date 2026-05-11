@@ -1,0 +1,23 @@
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Model cache (large binary files)
+.cache/
+
+# Word documents and PDFs (may contain personal info)
+*.docx
+*.pdf
+
+# Dataset CSVs (may contain third-party personal data)
+Resumes.csv
+Jobs.csv
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db

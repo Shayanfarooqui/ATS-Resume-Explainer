@@ -1,0 +1,18 @@
+{
+    "personal_info": {
+        "name": "Tableau",
+        "emails": [],
+        "phones": [],
+        "places": [],
+        "links": []
+    },
+    "resume_sections": {
+        "skills": "SQL, Python (pandas, NumPy)\n\n, Power BI\n\nData cleaning & wrangling\n\nExploratory Data Analysis (EDA)\n\nDashboard design and reporting\n\nStatistical analysis",
+        "experience": "Data Analyst\nXYZ Corporation - New York, NY\nJan 2022 - Present\n\nPerformed data cleaning and transformation using Python (pandas, NumPy) to prepare large datasets for analysis.\n\nWrote complex SQL queries to extract and manipulate data from relational databases.\n\nBuilt interactive dashboards using  to visualize KPIs and business metrics.\n\nConducted exploratory data analysis to uncover trends in customer behavior.\n\nPresented findings and strategic insights to business stakeholders using visual reports.\n\nCollaborated with product and marketing teams to define KPIs and monitor campaign performance using Power BI.",
+        "education": "Bachelor of Science in Data Science\nXYZ University - 2020",
+        "certifications": "Google Data Analytics Certificate\n\n Desktop Specialist",
+        "projects": "Customer Churn Prediction: Built a classification model in scikit-learn with 85% accuracy.\n\nSales Dashboard: Developed a real-time Power BI dashboard for a retail client.\n\nVolunteer Work\n\nData Visualization Mentor - Local coding bootcamp (2023)",
+        "volunteer": ""
+    },
+    "full_cleaned_text": "Experienced Data Analyst with a strong background in SQL Python and data visualization Skilled in cleaning and analyzing complex datasets building interactive dashboards and presenting actionable insights to stakeholders Passionate about turning data into strategic decisions Skills SQL Python pandas NumPy Power BI Data cleaning wrangling Exploratory Data Analysis EDA Dashboard design and reporting Statistical analysis Professional Experience Data Analyst XYZ Corporation New York NY Jan 2022 Present Performed data cleaning and transformation using Python pandas NumPy to prepare large datasets for analysis Wrote complex SQL queries to extract and manipulate data from relational databases Built interactive dashboards using to visualize KPIs and business metrics Conducted exploratory data analysis to uncover trends in customer behavior Presented findings and strategic insights to business stakeholders using visual reports Collaborated with product and marketing teams to define KPIs and monitor campaign performance using Power BI Education Bachelor of Science in Data Science XYZ University 2020 Certifications Google Data Analytics Certificate Desktop Specialist Projects Customer Churn Prediction Built a classification model in scikit learn with 85 accuracy Sales Dashboard Developed a real time Power BI dashboard for a retail client Volunteer Work Data Visualization Mentor Local coding bootcamp 2023"
+}
