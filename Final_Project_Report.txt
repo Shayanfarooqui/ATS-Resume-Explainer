@@ -1,0 +1,696 @@
+import json
+
+# Taking input from the User of their resume
+#resume_input = input("📄 Paste your resume text below:\n")
+
+# Taking input from the User of the job description they want
+#job_input = input("\n📋 Paste the job description below:\n")
+
+UserInputResume1 = """
+ALEXANDRA VERA
+📍 San Francisco, CA • 📞 (555) 321-9876 • ✉️ alexandra.vera@email.com
+LinkedIn: https://linkedin.com/in/alexandra-vera • GitHub: https://github.com/alexveradev
+
+PROFESSIONAL SUMMARY
+Detail-oriented and innovative Software Engineer with 6+ years of experience building scalable web applications and leading cross-functional teams. Passionate about clean code, user-centric design, and leveraging emerging technologies to solve real-world problems.
+
+TECHNICAL SKILLS
+- Languages: JavaScript, Python, TypeScript, Go, SQL
+- Frameworks/Libraries: React, Node.js, Django, Express, Flask
+- Tools & Platforms: Docker, AWS, Git, PostgreSQL, Redis, GraphQL
+- Other: Agile/Scrum, CI/CD, TDD, REST APIs, Microservices
+
+PROFESSIONAL EXPERIENCE
+
+Lead Software Engineer
+Nimbus Analytics – San Francisco, CA
+Jan 2021 – Present
+- Spearheaded the migration of legacy systems to a microservices architecture, improving deployment speed by 40%.
+- Led a team of 5 engineers in developing a data visualization dashboard used by Fortune 500 clients.
+- Integrated advanced caching mechanisms, reducing API latency by 55%.
+
+Full Stack Developer
+Orbit Solutions – Remote
+Jun 2018 – Dec 2020
+- Developed and maintained React/Node.js web apps serving over 100,000 monthly users.
+- Built custom analytics tools using PostgreSQL and D3.js, enabling data-driven business decisions.
+- Collaborated with product and UX teams to revamp the user interface, resulting in a 30% increase in engagement.
+
+Software Engineer Intern
+Lumio Labs – Palo Alto, CA
+Summer 2017
+- Created internal dashboards with Django and Bootstrap to track system health metrics.
+- Wrote unit tests and contributed to CI pipelines, improving code coverage by 22%.
+
+EDUCATION
+B.S. in Computer Science
+University of Washington
+2014 – 2018
+- Dean’s List, ACM Student Chapter
+
+PROJECTS
+
+OpenHealth API
+Built an open-source RESTful API to aggregate and analyze wearable health device data.
+- Technologies: FastAPI, MongoDB, OAuth2
+
+SkillMap
+An AI-powered tool for mapping developer skills and suggesting career paths.
+- Technologies: Python, TensorFlow, React
+"""
+
+UserInputResume = '''
+[YOUR NAME]
+[YOUR LOCATION] | [YOUR PHONE] | [YOUR EMAIL] | [YOUR LINKEDIN]
+
+A motivated IT professional with expertise in system management, network administration, and technical support. Skilled in optimizing IT infrastructure, integrating CRM systems, and enhancing user experiences through website development. Proficient in deploying innovative solutions, streamlining operations, and training teams on software and hardware. Committed to driving efficiency and delivering impactful IT solutions for business growth.
+
+Work Experiences
+
+IT Analyst - MK Wholesale Centre Ltd.					         	          March 2024 – Nov 2024
+•	Created and managed a catalogue of 4,000 products across two different websites, overseeing data management, product updates, stock levels, discontinued products, accurate record maintenance, and the integration of high-quality images.
+•	Implemented changes and enhancements on WordPress and Magento platforms, resolved hosting issues, and performed regular UI/UX updates to improve user experience.
+•	Integrated CRM systems customized them to meet company requirements, and trained staff on effective software usage.
+•	Utilized Google Analytics 4 and Looker to provide insights into e-commerce performance, warehouse operations, and sales trends.
+•	Implemented an integrated warehouse system to ensure seamless inflow and outflow of products.
+
+IT Team Lead - Vibgyor Vision                                                                                          July 2020 – Dec 2023
+
+•	Designed and constructed the official company website, incorporating analytics tools to monitor and analyze web traffic effectively
+•	Implemented the deployment of the ZKT950 attendance capturing device with an in-office Windows server, to company policies on its software, and ensured continuous monitoring of attendance and payroll.
+•	Managed the procurement, maintenance, and upgrading of hardware and software for the company, involving training of the company staff on the software.
+•	Wrote spreadsheet macros and formulas to streamline and optimize operational processes across various departments.
+•	Researched and implemented AI tools with the aim of streamlining and enhancing the efficiency of Sales and Accounts processes.
+•	Conducted training sessions for new employees on digital literacy and company software ethics.
+
+IT Support - Vibgyor Vision                                                                                               Oct 2019 - July 2020.
+
+•	From deploying network infrastructure to installing operating systems and company toolkits on individual computers.
+•	Implemented a local shared network on Microsoft Windows to facilitate seamless internal data sharing. Additionally, executed weekly backup protocols to mitigate the risk of data loss.
+•	Facilitating the configuration of company email clients for employees and addressing and resolving email server issues.
+•	Produced engaging visual content in both static and video formats to captivate the audience and foster the development of the brand image.
+
+Technical Support Engineer - CubeXS Weatherly (Pvt) Ltd.                                          July 2019- Sep 2019
+•	Provide technical support to customers via phone, email, and chat.
+•	Diagnose and troubleshoot software, hardware, and network issues.
+•	Collaborate with cross-functional teams to identify and resolve customer issues.
+•	Ensure timely resolution of customer issues and maintain accurate records of support requests and resolutions. 
+Academic Qualification
+
+Masters in Data Science and Analytics, [YOUR UNIVERSITY]
+Bachelors in Computer Science, DHA Suffa University                                                               
+
+Projects
+
+Assan-tendance - Attendance management system, which uses Wi-Fi connectivity through the employee’s smartphone to mark attendance, and create payroll based on hourly and monthly rates, allowing users to mark attendance when in the vicinity and use the Android app (made with Dart/Flutter, with the cloud of Firebase and Raspberry Pi to broadcast signals) to manage their attendance. 
+Intrusion Detection Using Snort – Researched prevention mechanisms of intrusions using snort and other methodologies in a network and methods to make the vulnerabilities secure.
+
+Food Ordering System - Developed a software project using the C programming language with a terminal interface. The primary objective was to automate the ordering process. The system facilitated order placement, payment processing, and an extensive menu.
+
+Technical Skills
+
+Languages		Python, C, C++, C#, HTML/CSS, Bash.
+Tools	Linux, Visual Studio, PyCharm, Microsoft Office, GSuite Google Analytics 4, Looker.
+
+Soft Skills
+
+●     Leadership, Problem-Solving, Teamwork, Communication.
+
+
+External Courses
+
+●	Certified Ethical Hackingv8 - GitHub
+●	Intro to Bash Programming – Code Academy
+●	Fundamentals of Digital Marketing – Google Digital Garage
+
+
+Volunteer & Achievements
+
+●     Team Leader in AIESEC - Helped Students to enable exchange programs all over the world.
+●     Pakistan Youth Forum - Providing helping hands to orphanages and old age homes.
+'''
+
+
+
+UserInputJobDesc =  """ Job Position: Business Graduate – via the Grayce Graduate Development Programme?
+
+Location: North West 
+
+Starting Salary: £25,000
+
+Application Requirements:
+
+· Minimum 2:1 or above in any undergraduate subject. 
+
+· Ability to work on site 5 days a week. 
+
+· Right to work in the UK unsponsored for the duration of the programme. 
+
+Are you a curious, adaptable and proactive problem solver with strong communication skills and a drive to make an impact? At Grayce, we’re looking for ambitious graduates who are eager to learn, take ownership and build meaningful relationships while delivering excellence. If you’re resourceful, resilient, and passionate about driving change, join us and be part of a community that cares, collaborates, and thrives together.
+
+Understanding the role:
+
+As a Business Analyst (BA), you’d be responsible for investigating and analysing business needs, identifying improvement opportunities, defining requirements and ensuring solutions align with business objectives. BA’s take a holistic approach, considering people, processes, technology and organisational structure to deliver value while minimising risks.
+
+Why Grayce?
+
+We specialise in driving change and transformation for some of the world’s most ambitious organisations and for over a decade, we've partnered with FTSE 100 and 250 companies to deliver impactful results by developing and deploying high-performing talent in the UK and beyond.
+
+Our Accelerated Development Programme is designed to launch the careers of recent graduates eager to make an impact. We offer a fast-track route to expertise, allowing you to gain hands-on experience with one of our impressive clients in a variety of flexible roles.
+
+Opportunity: You'll embark on a journey of continuous learning, gaining industry-accredited qualifications, whilst getting hands-on experience, working full time on site directly with prestigious FTSE100, 250, and 500 organisations.
+
+Delivery: You will work with one client, delivering high quality outcomes during your Grayce tenure, before transitioning to working directly for them. The skills required for exceptional client delivery include natural curiosity, proactivity, adaptability, effective communication and problem solving.
+
+Mentoring: Thrive under the guidance of our experienced Delivery Managers and Technical Trainers. They’ll be your go-to, offering support, insights and sharing experiences.
+
+Progression: Starting as an Analyst with the potential for significant salary progression, you will pick up invaluable skills and complete a minimum of 6 industry recognised accreditations during your time on the development programme.
+
+What makes a great Grayce Analyst?:
+
+2:1 Undergraduate Degree: We are open to applicants from all undergraduate backgrounds with a minimum 2:1 degree.
+
+Analytical Problem Solving: We're looking for analytical minds that can spot patterns and think creatively. Whether it's dissecting complex issues or finding fresh angles, we highly value critical thinking skills and their application.
+
+Soft Skills: From effective communication styles to planning, organisation and a learning development mindset, Grayce is committed to building core consultancy skills. Stakeholder and time management are core skills we utilise every day and we look for examples of those through our interview process.
+
+Why work for us?
+
+Competitive Salary: Starting at £25,000 with potential for significant growth.
+
+Industry Recognition: We help you embark on your journey with fully funded, industry-recognised qualifications designed to maximise your experience and put you in control of your career.
+
+Mentors and Coaches: Access a network of mentors and coaches dedicated to you, your experiences and development at Grayce.
+
+Wellness Support: We are here for you 24/7 with our Employee Assistance Programme, offering confidential assistance ranging from financial and legal support to health and wellbeing.
+"""
+
+
+user_inputs = {
+    "resume": UserInputResume,
+    "job_description": UserInputJobDesc
+}
+
+# Save to a JSON file
+with open("user_inputs.json", "w", encoding="utf-8") as f:
+    json.dump(user_inputs, f, indent=4, ensure_ascii=False)
+
+UserInputResume
+
+
+import re # Regix for regular expressions
+import spacy # NLP Library for text processing
+import json
+from geotext import GeoText # Importing geotext library to find geo locations
+
+
+# Load JSON content into a Python dictionary
+with open("user_inputs.json", "r", encoding="utf-8") as f:
+    resume = json.load(f)
+    
+clean_resume = resume["resume"]
+
+
+# Load the spaCy model
+nlp = spacy.load("en_core_web_md")
+
+clean_resume
+
+
+
+#Finding Location from Resume
+
+def extract_places_from_header(text, lines=5):
+    # Get only the first few lines
+    header = '\n'.join(text.strip().split('\n')[:lines])
+    doc = nlp(header)
+    
+    # Extract places (GPE = Geo-Political Entity)
+    places = [ent.text for ent in doc.ents if ent.label_ == 'GPE']
+    return places
+
+
+#Function to Lowercase the whole Text
+def lowercase_text(text):
+    """Convert the entire text to lowercase."""
+    return text.lower()
+
+
+#Finding the name from the first non-empty line or using NER as fallback.
+def extract_name(text):
+    """Extract the name from the first non-empty line or using NER as fallback."""
+    lines = text.strip().split("\n")
+    name_line = next((line.strip() for line in lines if line.strip()), None)
+
+    if not name_line:
+        return None  # Empty text case
+
+    doc = nlp(name_line)
+    if any(ent.label_ == "PERSON" for ent in doc.ents):
+        return name_line  # Looks like a name already
+    
+    # Fallback: Search the full text
+    doc_full = nlp(text)
+    for ent in doc_full.ents:
+        if ent.label_ == "PERSON":
+            return ent.text
+    
+    return None  # No name found
+
+
+
+def extract_emails(text):
+    """Extract all email addresses from text."""
+    email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+    emails = re.findall(email_pattern, text)
+    return emails
+
+def extract_phone_numbers(text):
+    """Extract phone numbers (UK style and general) from text."""
+    phone_pattern = r'(\+?\d{1,3}[\s-]?\d{3,4}[\s-]?\d{5,6})'
+    phones = re.findall(phone_pattern, text)
+    return phones
+
+def extract_links(text):
+    """Extract web links including LinkedIn, even if no https."""
+    # Pattern to match normal URLs and LinkedIn profiles, case-insensitive
+    link_pattern = r'(https?://[^\s|]+|www\.[^\s|]+|(?:linkedin|github|bitbucket)\.com/[^\s|]+)'
+    links = re.findall(link_pattern, text, flags=re.IGNORECASE)
+    return links
+
+#Removing from Original Text Functions
+
+def clean_resume_text(text, name=None, emails=None, phones=None, links=None, places=None):
+    """Remove extracted name, emails, phones, links, and places from the text."""
+    cleaned_text = text
+
+    # Remove name
+    if name:
+        cleaned_text = cleaned_text.replace(name, '')
+    
+    # Remove emails
+    if emails:
+        for e in emails:
+            cleaned_text = cleaned_text.replace(e, '')
+    
+    # Remove phones
+    if phones:
+        for p in phones:
+            cleaned_text = cleaned_text.replace(p, '')
+    
+    # Remove links
+    if links:
+        for l in links:
+            cleaned_text = cleaned_text.replace(l, '')
+    
+    # Remove places (using regex to handle word boundaries and case-insensitivity)
+    if places:
+        for place in places:
+            pattern = r'\b' + re.escape(place) + r'\b'
+            cleaned_text = re.sub(pattern, '', cleaned_text, flags=re.IGNORECASE)
+
+    return cleaned_text
+
+
+#text = re.sub(r'\d{1,2}/\d{1,2}/\d{2,4}', '', text) # To remove dates from the string
+def clean_special_characters(text):
+    # Replace all non-alphanumeric characters (except newline) with space
+    text = re.sub(r'[^\w\s]', ' ', text)
+    # Replace multiple spaces with a single space
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
+
+#Execution Area
+name = extract_name(clean_resume)
+emails = extract_emails(clean_resume)
+phones = extract_phone_numbers(clean_resume)
+places = extract_places_from_header(clean_resume, lines=5)
+links = extract_links(clean_resume)
+
+print("Name:", name)
+print("Email(s):", emails)
+print("Phone Number(s):", phones)
+print("Places:", places)
+print("Link(s):", links)
+
+
+cleaned_text = clean_resume_text(
+    clean_resume,
+    name=name,
+    emails=emails,
+    phones=phones,
+    links=links,
+    places=places
+)
+
+
+cleaned_text
+
+# Defining Resume section headers
+RESUME_SECTIONS = [
+    "Contact Information", "Objective", "Summary", "Education", "Experience", "Skills", "Projects",
+    "Certifications", "Licenses", "Awards", "Honors", "Publications", "References", "Technical Skills","External Courses",
+    "Computer Skills", "Programming Languages", "Software Skills", "Soft Skills", "Language Skills",
+    "Professional Skills", "Transferable Skills", "Work Experience", "Professional Experience","Work Experiences",
+    "Employment History", "Internship Experience", "Volunteer Experience", "Leadership Experience",
+    "Research Experience", "Teaching Experience", "Volunteer & Achievements", "Academic Qualification",
+]
+
+# Deining Map sections into main categories
+SECTION_MAPPING = {
+    "skills": ["skills", "technical skills", "computer skills", "programming languages", "software skills", "soft skills", "language skills", "professional skills", "transferable skills"],
+    "experience": ["experience", "work experience", "professional experience", "employment history", "internship experience", "volunteer experience", "leadership experience", "research experience", "teaching experience"],
+    "education": ["education", "academic qualification"],
+    "certifications": ["certifications", "licenses", "external courses"],
+    "projects": ["projects"],
+    "volunteer": ["volunteer experience", "volunteer & achievements", "volunteer", "achievements"],
+}
+
+# Text Cleaner
+class TextCleaner:
+    @staticmethod
+    def clean_text(text: str) -> str:
+        text = text.replace("\u2013", "-").replace("–", "-")
+        return text.strip()
+
+class DataExtractor:
+    def __init__(self, raw_text: str = cleaned_text):
+        self.text = TextCleaner.clean_text(raw_text)
+        self.doc = nlp(self.text)
+        self.sections = self.split_into_sections()
+
+    def split_into_sections(self):
+        lines = self.text.split("\n")
+        sections = {}
+        current_section = "other"
+        buffer = []
+
+        for line in lines:
+            line_clean = line.strip().lower()
+            if any(sec.lower() == line_clean for sec in RESUME_SECTIONS):
+                if buffer and current_section:
+                    sections[current_section] = "\n".join(buffer).strip()
+                current_section = line_clean
+                buffer = []
+            else:
+                buffer.append(line)
+        
+        if buffer and current_section:
+            sections[current_section] = "\n".join(buffer).strip()
+
+        return sections
+
+    def get_section(self, category):
+        targets = SECTION_MAPPING.get(category, [])
+        for section_title, content in self.sections.items():
+            for target in targets:
+                if target in section_title:
+                    return content
+        return ""
+
+    def extract_skills(self):
+        return self.get_section("skills")
+
+    def extract_experience(self):
+        return self.get_section("experience")
+
+    def extract_education(self):
+        return self.get_section("education")
+
+    def extract_certifications(self):
+        return self.get_section("certifications")
+
+    def extract_projects(self):
+        return self.get_section("projects")
+
+    def extract_volunteer(self):
+        return self.get_section("volunteer")
+
+extractor = DataExtractor()
+skills = extractor.extract_skills()
+experience = extractor.extract_experience()
+education = extractor.extract_education()
+certification = extractor.extract_certifications()
+projects = extractor.extract_projects()
+volunteer = extractor.extract_volunteer()
+
+
+print("Skills Section:\n", skills)
+print("\nExperience Section:\n", experience)
+print("\nEducation Section:\n", education)
+print("\nCertifications Section:\n", certification)
+print("\nProjects Section:\n", projects)
+print("\nVolunteer Section:\n", volunteer)
+
+#Cleaning the Text
+cleaned_text = clean_special_characters(cleaned_text)
+cleaned_text
+
+
+### remove dates, Lemmatize and remove stop words. 
+### Keep the clean version as well as the other. 
+
+#Saving in Json
+
+extracted_resume_data = {
+    "personal_info": {
+        "name": name,
+        "emails": emails,
+        "phones": phones,
+        "places": places,
+        "links": links
+    },
+    "resume_sections": {
+        "skills": skills,
+        "experience": experience,
+        "education": education,
+        "certifications": certification,
+        "projects": projects,
+        "volunteer": volunteer
+    },
+    "full_cleaned_text": cleaned_text
+}
+
+# Save it into a JSON file
+with open("extracted_resume.json", "w", encoding="utf-8") as f:
+    json.dump(extracted_resume_data, f, indent=4, ensure_ascii=False)
+
+import os
+import re
+import spacy
+
+# Load the spaCy model
+nlp = spacy.load("en_core_web_md")
+
+# Change directory so that python knows where the file Dataset is
+os.chdir(r'C:\Users\User\Desktop\Project')
+
+# Load JSON content into a Python dictionary
+with open("user_inputs.json", "r", encoding="utf-8") as f:
+    jobpost = json.load(f)
+    
+clean_JobDesc = jobpost["job_description"]
+
+clean_JobDesc
+
+
+def basic_text_cleaning(text):
+    """Clean the text by removing unwanted characters, lowercasing, and normalizing spaces."""
+    text = text.replace("\u2013", "-").replace("–", "-")  # Replace weird dashes
+    text = re.sub(r'[^A-Za-z0-9\s]', ' ', text)  # Keep only letters, numbers, and spaces
+    text = re.sub(r'\s+', ' ', text)  # Collapse multiple spaces into one
+    text = text.lower().strip()  # Lowercase and strip leading/trailing spaces
+    return text
+
+def lemmatize_and_clean(text, nlp):
+    """Lemmatize text, remove stopwords, punctuation, and numbers, and return cleaned token list."""
+    doc = nlp(text)
+    lemmatized_tokens = []
+
+    for token in doc:
+        if not token.is_stop and not token.is_punct and not token.like_num:
+            lemmatized_tokens.append(token.lemma_.lower().strip())
+
+    return lemmatized_tokens
+
+
+
+semanticJobDesc = basic_text_cleaning(clean_JobDesc)
+lemmatizedJobDesc = lemmatize_and_clean(clean_JobDesc,nlp)
+lemmatizedJobDesc
+
+# Definign columns to data to save
+jobdesc_data = {
+    "semantic_job_desc": semanticJobDesc,
+    "lemmatized_job_desc": lemmatizedJobDesc
+}
+
+#Saving to JSON
+with open("cleaned_job_description.json", "w", encoding="utf-8") as f:
+    json.dump(jobdesc_data, f, indent=4, ensure_ascii=False)
+
+
+with open("cleaned_job_description.json", "r", encoding="utf-8") as f:
+     data = json.load(f)
+
+
+print(data)
+
+
+import os
+import json
+from sentence_transformers import SentenceTransformer, util
+from lime.lime_text import LimeTextExplainer
+import numpy as np
+
+# --- Load SBERT Model --- Bigger Model around 400 MB
+model = SentenceTransformer('all-mpnet-base-v2')
+
+os.chdir(r'C:\Users\User\Desktop\Project')
+
+
+# Step 1: Load Resume Data
+with open("extracted_resume.json", "r", encoding="utf-8") as f:
+    resume_data = json.load(f)
+
+# Step 2: Load Job Description Data
+with open("cleaned_job_description.json", "r", encoding="utf-8") as f:
+    jobdesc_data = json.load(f)
+
+# Step 3: Access Resume Fields
+resume_sections = resume_data.get("resume_sections", {})
+cleaned_resume_text = resume_data.get("full_cleaned_text", "")
+
+# Step 4: Access Job Description Fields
+semantic_job_desc = jobdesc_data.get("semantic_job_desc", "")
+lemmatized_job_desc = jobdesc_data.get("lemmatized_job_desc", [])
+
+
+
+# Step 3: Encode both texts into embeddings
+resume_embedding = model.encode(cleaned_resume_text, convert_to_tensor=True)
+jobdesc_embedding = model.encode(semantic_job_desc, convert_to_tensor=True)
+
+# Step 4: Calculate cosine similarity
+similarity_score = util.cos_sim(resume_embedding, jobdesc_embedding)
+
+print(f"✅ Semantic Similarity Score: {similarity_score.item():.4f}")
+
+
+def predict_similarity(texts):
+    embeddings = model.encode(texts, convert_to_tensor=True)
+    scores = util.cos_sim(embeddings, jobdesc_embedding)
+    return scores.cpu().numpy()
+
+# Define LIME text explainer
+explainer = LimeTextExplainer(class_names=["Not Similar", "Similar"])
+
+# Explain
+exp = explainer.explain_instance(resume_text, predict_similarity, num_features=10)
+
+# Visualize
+exp.show_in_notebook(text=True)
+
+
+
+# --- Imports ---
+from sentence_transformers import SentenceTransformer, util
+from lime.lime_text import LimeTextExplainer
+import numpy as np
+import matplotlib.pyplot as plt
+
+# --- Load SBERT Model ---
+model = SentenceTransformer('all-mpnet-base-v2')
+
+# --- Functions ---
+
+def read_file(filepath):
+    """Reads a text file and returns the content."""
+    with open(filepath, 'r', encoding='utf-8') as f:
+        return f.read()
+
+def compute_similarity(text1, text2):
+    """Compute cosine similarity between two texts."""
+    emb1 = model.encode(text1, convert_to_tensor=True)
+    emb2 = model.encode(text2, convert_to_tensor=True)
+    return util.cos_sim(emb1, emb2).cpu().numpy()[0][0]
+
+def plot_similarity(score):
+    """Plot a simple pie chart showing match vs not-match."""
+    matched = score
+    unmatched = 1 - score
+    labels = ['Matched', 'Not Matched']
+    sizes = [matched, unmatched]
+    colors = ['skyblue', 'lightcoral']
+
+    plt.figure(figsize=(6, 6))
+    plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+    plt.title('Resume vs Job Description Similarity')
+    plt.axis('equal')
+    plt.show()
+
+# Custom "classifier" like wrapper for LIME
+class SimilarityModel:
+    def __init__(self, fixed_text):
+        self.fixed_embedding = model.encode(fixed_text, convert_to_tensor=True)
+
+    def predict_proba(self, texts):
+        scores = []
+        for t in texts:
+            emb = model.encode(t, convert_to_tensor=True)
+            sim = util.cos_sim(emb, self.fixed_embedding).cpu().numpy()[0][0]
+            # Fake binary classes: [similarity, 1-similarity]
+            scores.append([sim, 1 - sim])
+        return np.array(scores)
+
+def explain_resume_with_lime(resume_text, job_desc_text, num_features=20, num_samples=300):
+    """Use LIME to explain which words affect matching the most and suggest improvements."""
+    sim_model = SimilarityModel(job_desc_text)
+    explainer = LimeTextExplainer(class_names=["Match", "No Match"])
+
+    exp = explainer.explain_instance(
+        resume_text,
+        sim_model.predict_proba,
+        num_features=num_features,
+        num_samples=num_samples
+    )
+
+    # --- TEXT output instead of HTML ---
+    print("\n🧠 LIME Important Features (Words Impacting Match):")
+    for feature, weight in exp.as_list():
+        print(f"{feature:25} --> {weight:+.3f}")
+
+    # --- Suggest Improvements ---
+    print("\n💡 Suggestions to Improve Resume:")
+    suggestions = []
+    for word, weight in exp.as_list():
+        if weight < 0:  # Negative influence
+            suggestions.append(word)
+    
+    if suggestions:
+        print(f"➔ Try emphasizing or adding keywords like: {', '.join(suggestions)}")
+    else:
+        print("➔ Resume already matches well! Minor tweaks only.")
+
+# --- Main Execution ---
+
+if __name__ == "__main__":
+    # Step 1: Read Files
+    resume_text = read_file('clean_resume.txt')
+    job_desc_text = read_file('clean_jobDesc.txt')
+
+    # --- Optional: Truncate Resume Text for Testing Speed ---
+    if len(resume_text) > 1500:
+        resume_text = resume_text[:1500]  # Use first 1500 characters for faster testing
+
+    # Step 2: Compute and Print Similarity
+    similarity_score = compute_similarity(resume_text, job_desc_text)
+    print(f"\n🔗 Cosine Similarity between Resume and Job Description: {similarity_score*100:.2f}%")
+
+    # Step 3: Plot Match vs Not Match
+    plot_similarity(similarity_score)
+
+    # Step 4: Explain with LIME and Suggest Improvements
+    explain_resume_with_lime(resume_text, job_desc_text, num_features=20, num_samples=300)
+
+
